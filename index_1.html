@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coltan Capital Advisors | Small Business Acquisition Fund — New York</title>
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --navy-2: #16283d;
+    --gold: #b8862f;
+    --gold-light: #d9a94f;
+    --cream: #f7f4ee;
+    --ink: #1c2530;
+    --muted: #5a6672;
+    --line: #e4ded1;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+  }
+  h1, h2, h3, .brand, nav a, .btn { font-family: 'Helvetica Neue', Arial, sans-serif; }
+
+  /* NAV */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy);
+    border-bottom: 1px solid rgba(216,169,79,0.25);
+  }
+  .nav-wrap {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+  }
+  .brand {
+    color: #fff;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+  }
+  .brand span { color: var(--gold-light); }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+  nav a {
+    color: #cfd8e2;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--gold-light); }
+  .nav-cta {
+    background: var(--gold);
+    color: #fff !important;
+    padding: 9px 18px;
+    border-radius: 3px;
+  }
+  .nav-cta:hover { background: var(--gold-light); color: #fff !important; }
+  .nav-toggle { display: none; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 55%, #1d3350 100%);
+    color: #fff;
+    padding: 100px 24px 110px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: -80px;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    border: 1px solid rgba(216,169,79,0.18);
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    right: -40px;
+    top: 40px;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    border: 1px solid rgba(216,169,79,0.14);
+  }
+  .hero-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12.5px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    border: 1px solid rgba(216,169,79,0.45);
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 26px;
+  }
+  .hero h1 {
+    font-family: 'Georgia', serif;
+    font-size: 48px;
+    line-height: 1.18;
+    max-width: 760px;
+    font-weight: 400;
+    margin-bottom: 22px;
+  }
+  .hero h1 em { color: var(--gold-light); font-style: normal; }
+  .hero p.lead {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 17px;
+    color: #c7d1dc;
+    max-width: 560px;
+    margin-bottom: 38px;
+  }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14.5px;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 3px;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
+  }
+  .btn-primary { background: var(--gold); color: #fff; }
+  .btn-primary:hover { background: var(--gold-light); }
+  .btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.35); }
+  .btn-ghost:hover { border-color: var(--gold-light); color: var(--gold-light); }
+
+  .stat-strip {
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+  }
+  .stat-strip-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 34px 24px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+  }
+  .stat-strip .num {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .stat-strip .label {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12.5px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+
+  section { padding: 90px 24px; }
+  .section-inner { max-width: 1140px; margin: 0 auto; }
+  .section-head { max-width: 640px; margin-bottom: 50px; }
+  .kicker {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .section-head h2 {
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 14px;
+  }
+  .section-head p { color: var(--muted); font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 15.5px; }
+
+  /* CRITERIA */
+  .criteria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .criteria-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 32px 28px;
+  }
+  .criteria-card .icon {
+    width: 42px; height: 42px;
+    border-radius: 8px;
+    background: var(--navy);
+    color: var(--gold-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; font-weight: 700;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin-bottom: 18px;
+  }
+  .criteria-card h3 {
+    font-size: 17px;
+    color: var(--navy);
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .criteria-card p, .criteria-card ul {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14.5px;
+    color: var(--muted);
+  }
+  .criteria-card ul { padding-left: 18px; margin-top: 8px; }
+  .criteria-card li { margin-bottom: 4px; }
+
+  /* WHY / PROCESS */
+  .why-section { background: var(--navy); color: #fff; }
+  .why-section .section-head p { color: #b7c2cd; }
+  .why-section .kicker { color: var(--gold-light); }
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    counter-reset: step;
+  }
+  .process-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    padding: 28px 22px;
+    position: relative;
+  }
+  .process-card .step-num {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    color: var(--gold-light);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+  .process-card h3 {
+    font-size: 16.5px;
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  .process-card p {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    color: #c7d1dc;
+  }
+
+  /* TEAM */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .team-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    text-align: center;
+  }
+  .team-photo {
+    height: 200px;
+    background: linear-gradient(135deg, var(--navy), var(--navy-2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold-light);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .team-info { padding: 24px 20px; }
+  .team-info h3 { font-size: 17px; color: var(--navy); font-weight: 700; font-family: 'Helvetica Neue', Arial, sans-serif; margin-bottom: 4px; }
+  .team-info .role {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    margin-bottom: 12px;
+  }
+  .team-info p.bio {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+  .team-note {
+    margin-top: 26px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+  }
+
+  /* CONTACT */
+  .contact-section {
+    background: #fff;
+    border-top: 1px solid var(--line);
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .contact-info h2 { font-size: 30px; font-weight: 400; color: var(--navy); margin-bottom: 16px; }
+  .contact-info p { font-family: 'Helvetica Neue', Arial, sans-serif; color: var(--muted); font-size: 15px; margin-bottom: 28px; }
+  .contact-detail {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 20px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  .contact-detail .cd-icon {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .contact-detail .cd-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    margin-bottom: 2px;
+  }
+  .contact-detail .cd-value { font-size: 15px; color: var(--ink); font-weight: 500; }
+  .contact-detail a { color: var(--ink); text-decoration: none; }
+  .contact-detail a:hover { color: var(--gold); }
+
+  form { background: var(--cream); border: 1px solid var(--line); border-radius: 8px; padding: 36px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  form label { display: block; font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 6px; font-weight: 600; }
+  form input, form textarea, form select {
+    width: 100%;
+    padding: 11px 13px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+    background: #fff;
+    color: var(--ink);
+  }
+  form textarea { resize: vertical; min-height: 90px; }
+  .full-row { margin-bottom: 16px; }
+  form button {
+    width: 100%;
+    background: var(--navy);
+    color: #fff;
+    border: none;
+    padding: 14px;
+    border-radius: 4px;
+    font-size: 14.5px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: background 0.2s;
+  }
+  form button:hover { background: var(--navy-2); }
+  .form-disclaimer { font-size: 12px; color: var(--muted); margin-top: 14px; text-align: center; }
+
+  /* CONFIDENTIALITY BANNER */
+  .confidential {
+    background: var(--cream);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .confidential p {
+    max-width: 780px;
+    margin: 0 auto;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  footer {
+    background: var(--navy);
+    color: #93a0ac;
+    padding: 40px 24px 30px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  .footer-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 24px;
+  }
+  .footer-brand { color: #fff; font-weight: 700; font-size: 15px; }
+  .footer-brand span { color: var(--gold-light); }
+  footer .fine { font-size: 12.5px; color: #7c8894; }
+
+  @media (max-width: 860px) {
+    nav ul { display: none; }
+    .hero h1 { font-size: 34px; }
+    .stat-strip-inner { grid-template-columns: repeat(2, 1fr); }
+    .criteria-grid, .process-grid, .team-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .form-row { grid-template-columns: 1fr; }
+    section { padding: 60px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="#top" class="brand">COLTAN <span>CAPITAL ADVISORS</span></a>
+    <ul>
+      <li><a href="#criteria">Investment Criteria</a></li>
+      <li><a href="#approach">Our Approach</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <span class="eyebrow">Small Business Acquisition Fund · New York</span>
+    <h1>Acquiring and growing New York's <em>enduring small businesses.</em></h1>
+    <p class="lead">Coltan Capital Advisors partners with owners of profitable, well-run small businesses across the New York metro area who are ready for their next chapter — providing capital, continuity, and a long-term home for what they've built.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">Start a Conversation</a>
+      <a href="#criteria" class="btn btn-ghost">View Investment Criteria</a>
+    </div>
+  </div>
+</section>
+
+<div class="stat-strip">
+  <div class="stat-strip-inner">
+    <div>
+      <div class="num">$1M–$5M</div>
+      <div class="label">Target Revenue Range</div>
+    </div>
+    <div>
+      <div class="num">NY Metro</div>
+      <div class="label">Primary Geography</div>
+    </div>
+    <div>
+      <div class="num">100%</div>
+      <div class="label">Confidential Process</div>
+    </div>
+    <div>
+      <div class="num">30 Days</div>
+      <div class="label">Typical Initial Response</div>
+    </div>
+  </div>
+</div>
+
+<section id="criteria">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="kicker">What We Look For</div>
+      <h2>Our Investment Criteria</h2>
+      <p>We focus on established, profitable small businesses with durable customer relationships and a clear path for continued growth under new ownership.</p>
+    </div>
+    <div class="criteria-grid">
+      <div class="criteria-card">
+        <div class="icon">$</div>
+        <h3>Financial Profile</h3>
+        <ul>
+          <li>$1M – $5M in annual revenue</li>
+          <li>Consistent profitability (3+ years)</li>
+          <li>Healthy margins and cash flow</li>
+        </ul>
+      </div>
+      <div class="criteria-card">
+        <div class="icon">NY</div>
+        <h3>Geography</h3>
+        <ul>
+          <li>New York City and the five boroughs</li>
+          <li>Long Island, Westchester &amp; the Hudson Valley</li>
+          <li>Select opportunities across NY State</li>
+        </ul>
+      </div>
+      <div class="criteria-card">
+        <div class="icon">&#8594;</div>
+        <h3>Situation</h3>
+        <ul>
+          <li>Owner retirement or transition</li>
+          <li>Founder seeking a trusted successor</li>
+          <li>Business ready to scale with new resources</li>
+        </ul>
+      </div>
+      <div class="criteria-card">
+        <div class="icon">&#9881;</div>
+        <h3>Industries</h3>
+        <ul>
+          <li>Manufacturing &amp; light industrial</li>
+          <li>Business &amp; home services</li>
+          <li>Distribution &amp; specialty retail</li>
+        </ul>
+      </div>
+      <div class="criteria-card">
+        <div class="icon">&#128101;</div>
+        <h3>Team &amp; Operations</h3>
+        <ul>
+          <li>Established staff and management depth</li>
+          <li>Documented processes and systems</li>
+          <li>Loyal, recurring customer base</li>
+        </ul>
+      </div>
+      <div class="criteria-card">
+        <div class="icon">&#10003;</div>
+        <h3>Deal Structure</h3>
+        <ul>
+          <li>Majority or full acquisitions</li>
+          <li>Flexible on seller transition timelines</li>
+          <li>Open to seller financing arrangements</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-section" id="approach">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="kicker">How We Work</div>
+      <h2>A Straightforward Process, Built on Trust</h2>
+      <p>We know a business sale is personal. Our process is designed to be direct, respectful of your time, and confidential from the first conversation.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-card">
+        <div class="step-num">STEP 01</div>
+        <h3>Introductory Call</h3>
+        <p>A no-obligation conversation to learn about your business and understand your goals.</p>
+      </div>
+      <div class="process-card">
+        <div class="step-num">STEP 02</div>
+        <h3>Preliminary Review</h3>
+        <p>We review basic financials under a signed NDA and share initial thoughts on structure and value.</p>
+      </div>
+      <div class="process-card">
+        <div class="step-num">STEP 03</div>
+        <h3>Letter of Intent</h3>
+        <p>We move quickly to a clear, fair offer with terms that reflect your business and your priorities.</p>
+      </div>
+      <div class="process-card">
+        <div class="step-num">STEP 04</div>
+        <h3>Closing &amp; Transition</h3>
+        <p>We work on a timeline that suits you, with a transition plan that protects your team and legacy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="kicker">Who We Are</div>
+      <h2>Our Team</h2>
+      <p>Coltan Capital Advisors is led by a small, hands-on team focused exclusively on New York small business acquisitions.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-photo">GO</div>
+        <div class="team-info">
+          <h3>George Oboge</h3>
+          <div class="role">Founder &amp; Managing Partner</div>
+          <p class="bio">Leads sourcing, deal structuring, and owner relationships for Coltan Capital Advisors.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo">+</div>
+        <div class="team-info">
+          <h3>Add Team Member</h3>
+          <div class="role">Role / Title</div>
+          <p class="bio">Reserve this space for a partner, advisor, or operating executive.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo">+</div>
+        <div class="team-info">
+          <h3>Add Team Member</h3>
+          <div class="role">Role / Title</div>
+          <p class="bio">Reserve this space for a partner, advisor, or operating executive.</p>
+        </div>
+      </div>
+    </div>
+    <p class="team-note">Additional bios, headshots, and advisory board details can be added here.</p>
+  </div>
+</section>
+
+<div class="confidential">
+  <p>All inquiries and business information shared with Coltan Capital Advisors are held in strict confidence. We are happy to sign a mutual NDA before any detailed discussion.</p>
+</div>
+
+<section class="contact-section" id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="kicker">Get In Touch</div>
+        <h2>Let's start a conversation.</h2>
+        <p>Whether you're considering a sale in the next few months or a few years from now, we're glad to talk. Every conversation is confidential and without obligation.</p>
+
+        <div class="contact-detail">
+          <div class="cd-icon">@</div>
+          <div>
+            <div class="cd-label">Email</div>
+            <div class="cd-value"><a href="mailto:goboge@gmail.com">goboge@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon">&#9742;</div>
+          <div>
+            <div class="cd-label">Phone</div>
+            <div class="cd-value">(212) 555-0142 <em style="font-size:12px;color:#9aa4ad;">— placeholder, update with real number</em></div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon">&#128205;</div>
+          <div>
+            <div class="cd-label">Office</div>
+            <div class="cd-value">New York, NY <em style="font-size:12px;color:#9aa4ad;">— placeholder address</em></div>
+          </div>
+        </div>
+      </div>
+
+      <form onsubmit="event.preventDefault(); document.getElementById('formNote').style.display='block'; this.reset();">
+        <div class="form-row">
+          <div>
+            <label for="fname">Full Name</label>
+            <input type="text" id="fname" placeholder="Jane Smith" required>
+          </div>
+          <div>
+            <label for="femail">Email</label>
+            <input type="email" id="femail" placeholder="jane@company.com" required>
+          </div>
+        </div>
+        <div class="full-row">
+          <label for="fbiz">Business Name (optional)</label>
+          <input type="text" id="fbiz" placeholder="Company LLC">
+        </div>
+        <div class="full-row">
+          <label for="fmsg">Tell us about your business</label>
+          <textarea id="fmsg" placeholder="Industry, approximate revenue, and what you're considering..." required></textarea>
+        </div>
+        <button type="submit">Send Inquiry</button>
+        <p class="form-disclaimer" id="formNote" style="display:none;">Thank you — this form is a static demo. Connect it to an email service (e.g. Formspree, mailto) or your CRM to receive live submissions.</p>
+        <p class="form-disclaimer">Or reach us directly at goboge@gmail.com</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">COLTAN <span>CAPITAL ADVISORS</span></div>
+    <div class="fine">&copy; 2026 Coltan Capital Advisors. Small business acquisitions across New York. All inquiries confidential.</div>
+  </div>
+</footer>
+
+</body>
+</html>
